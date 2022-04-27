@@ -27,7 +27,7 @@ Apart from the files mentioned above, `epub_wordlist/data/lemma.en.txt` contains
 
 ## Licenses
 
-The files in the `epub_wordlist` directory is release under the 2-Clause BSD License.
+The files in the `epub_wordlist` directory is released under the 2-Clause BSD License.
 
 The file `epub_wordlist/data/lemma.en.txt` is released under the licenses mentioned in LICENSE.
 
