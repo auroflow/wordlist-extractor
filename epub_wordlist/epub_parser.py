@@ -9,7 +9,7 @@ from zipfile import ZipFile
 
 
 class DocumentParser(HTMLParser):
-    def __init__(self, words: set[str]):
+    def __init__(self, words):
         HTMLParser.__init__(self)
         self.words = words
 
@@ -28,7 +28,7 @@ def get_words(filename: str):
     Returns:
         A list of words that appear in the epub file.
     """
-    words: set[str] = set()
+    words = set()
 
     ns = {
         'ns': 'urn:oasis:names:tc:opendocument:xmlns:container',

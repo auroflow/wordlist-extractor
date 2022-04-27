@@ -14,10 +14,10 @@ A line starting with ';' is a comment.
 """
 
 
-_cached_mapping: dict[str, str] | None = None
+_cached_mapping = None
 
 
-def get_mapping(lemma_filename: str) -> dict[str, str]:
+def get_mapping(lemma_filename: str):
     """
     Get a dict object storing mappings from words to their lemmas.
 
@@ -31,8 +31,8 @@ def get_mapping(lemma_filename: str) -> dict[str, str]:
     if _cached_mapping is not None:
         return _cached_mapping
 
-    mapping: dict[str, str] = dict()
-    lemmas: set[str] = set()
+    mapping = dict()
+    lemmas = set()
 
     with open(lemma_filename, 'r') as f:
         for line in f:

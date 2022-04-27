@@ -8,7 +8,7 @@ from os.path import exists
 import re
 
 
-def get_known_lemmas(filename: str, mapping: dict[str, str]) -> set[str]:
+def get_known_lemmas(filename: str, mapping: dict):
     """
     Get a set of known lemmas from the file containing known words.
 

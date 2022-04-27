@@ -6,7 +6,6 @@ from .lemma_creator import get_mapping
 # -------------
 # Get filenames
 # -------------
-words_filename = 'data/words.txt'
 lemma_filename = 'data/lemma.en.txt'
 known_words_filename = 'known-words.txt'
 book_filename = 'book.epub'
@@ -14,22 +13,17 @@ output_filename = 'wordlist.txt'
 
 argparser = argparse.ArgumentParser(
     description='Create a word list from an epub file.')
-argparser.add_argument('--file', '-f', help='The epub file to process.')
-argparser.add_argument('--lemma', '-l', help='The lemma file to use.')
 argparser.add_argument(
-    '--known', '-k', help='The file containing known words. These words are excluded from the word list.')
+    '-e',  '--epub', help='The epub file to process. Default to {}.'.format(book_filename))
 argparser.add_argument(
-    '--words', '-w', help='The file containing all English words to recognize.')
-argparser.add_argument('--output', '-o', help='The output file.')
+    '-k', '--known-words', help='The file containing known words. These words are excluded from the word list. Default to {}.'.format(known_words_filename))
+argparser.add_argument(
+    '-o', '--output', help='The output file. Default to {}.'.format(output_filename))
 args = argparser.parse_args()
-if args.file:
-    book_filename = args.file
-if args.lemma:
-    lemma_filename = args.lemma
-if args.known:
-    known_words_filename = args.known
-if args.words:
-    words_filename = args.words
+if args.epub:
+    book_filename = args.epub
+if args.known_words:
+    known_words_filename = args.known_words
 if args.output:
     output_filename = args.output
 
