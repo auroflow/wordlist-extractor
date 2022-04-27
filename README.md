@@ -1,6 +1,6 @@
 # Create a word list from EPUB files!
 
-This file parses an EPUB file and generates a list of words in the ebook.
+This program parses an EPUB file and generates a list of words used in the ebook.
 
 ## Requirements
 
