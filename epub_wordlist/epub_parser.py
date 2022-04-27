@@ -3,7 +3,6 @@ This file extracts words from an epub file.
 """
 import xml.etree.ElementTree as ET
 from html.parser import HTMLParser
-import io
 import re
 from zipfile import ZipFile
 

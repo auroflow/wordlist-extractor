@@ -23,12 +23,12 @@ options:
 
 The existing files in the `known-words` directory are tailored to my need. You can modify, add or delete them as you wish.
 
-Apart from the files mentioned above, `data/lemma.en.txt` contains word forms that will be treated as one word. 
+Apart from the files mentioned above, `epub_wordlist/data/lemma.en.txt` contains word forms that will be treated as one word. 
 
 ## Licenses
 
 The files in the `epub_wordlist` directory is release under the 2-Clause BSD License.
 
-The file `data/lemma.en.txt` is released under the licenses mentioned in LICENSE.
+The file `epub_wordlist/data/lemma.en.txt` is released under the licenses mentioned in LICENSE.
 
 The example EPUB file `book.epub` contains *Alice's Adventures in Wonderland*, which is in the public domain.

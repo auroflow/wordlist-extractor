@@ -7,7 +7,7 @@ from .lemma_creator import get_mapping
 # -------------
 # Get filenames
 # -------------
-lemma_filename = 'data/lemma.en.txt'
+lemma_filename = 'epub_wordlist/data/lemma.en.txt'
 known_words_filename = 'known-words'
 book_filename = 'book.epub'
 output_filename = 'wordlist.txt'
