@@ -17,13 +17,13 @@ class DocumentParser(HTMLParser):
         self.words.update(new_words)
 
 
-def get_words(filename: str):
+def get_words_from_epub(filename: str):
     """
     Get a list of words that appear in an epub file.
 
     Args:
         filename: The epub file.
-    
+
     Returns:
         A list of words that appear in the epub file.
     """

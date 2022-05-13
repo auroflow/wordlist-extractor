@@ -23,7 +23,7 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-The data in data/lemmas.en.txt are derived by Thomas Wang 
+The data in lemmas.en.txt are derived by Thomas Wang 
 (https://github.com/Enaunimes/freeq) from the work by Keven Atkinson and many 
 others.
 
