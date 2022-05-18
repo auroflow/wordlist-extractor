@@ -1,6 +1,5 @@
-wordlist.txt
-wordlist.known.txt
-wordlist.unknown.txt
+/*.txt
+!/requirements.txt
 known-words/*
 !known-words/cet-4.txt
 !known-words/oxford-3000.txt

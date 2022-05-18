@@ -23,14 +23,14 @@ $ source env/bin/activate   # Linux / macOS
 ### The main word list extractor
 
 ```
-(env) $ python -m wordlist_extractor [-h] [-e EPUB] [-k KNOWN_WORDS] [-o OUTPUT] [-s]
+(env) $ python app.py [-h] [-f FILENAME] [-k KNOWN_WORDS] [-o OUTPUT] [-s]
 
 options:
   -h, --help            show this help message and exit
   -f FILENAME, --filename FILENAME
                         The path to the EPUB or TXT file. Default to book.epub.
   -k KNOWN_WORDS, --known-words KNOWN_WORDS
-                        The folder which contain known word files. Words in these files are excluded from the word list. Default to known-words.
+                        The folder containing known word files. Words in these files are excluded from the word list. Default to known-words.
   -o OUTPUT, --output OUTPUT
                         The output file. Default to wordlist.txt.
   -s, --shuffle         Shuffle the word list.
@@ -56,7 +56,7 @@ It is recommended that you move `FILENAME.known.txt` to the `known-words` direct
 
 ## Licenses
 
-The Python scripts in the `wordlist_extractor` directory are released under the 2-Clause BSD License.
+The Python scripts are released under the 2-Clause BSD License.
 
 The file `wordlist_extractor/data/lemma.en.txt` is released under the licenses mentioned in LICENSE.
 
