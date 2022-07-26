@@ -7,7 +7,7 @@ you split a word list in two based on whether you know the word.
 
 ## Requirements
 
-Python 3.8+. Install the dependencies via `pip`:
+Python 3.10. Install the dependencies via `pip`:
 
 ```bash
 $ python -m venv env
@@ -52,6 +52,7 @@ options:
 ```
 
 The output names will be `FILENAME.known.txt` for the list of known words and `FILENAME.unknown.txt` for the list of unknown words.
+
 It is recommended that you move `FILENAME.known.txt` to the `known-words` directory so that they will be excluded in future lists.
 
 ## Licenses

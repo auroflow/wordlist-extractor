@@ -1,18 +1,15 @@
 import argparse
-from random import shuffle
-
-from wordlist_extractor.txt_parser import get_words_from_txt
-from wordlist_extractor.epub_parser import get_words_from_epub
-from wordlist_extractor.known_words import get_known_lemmas
-from wordlist_extractor.lemma_creator import get_mapping
-
+from modules.list_generators.wordlist import PlainListGenerator
+from modules.sentence_tokenizers.nltk import NltkSentTokenizer
+from modules.text_extractors import TextExtractor
+from modules.text_extractors.epub import EpubTextExtractor
+from modules.text_extractors.txt import TxtTextExtractor
+from config import default_input_filename, default_output_filename
 # -------------
 # Get filenames
 # -------------
-lemma_filename = 'wordlist_extractor/data/lemma.en.txt'
-known_words_filename = 'known-words'
-input_filename = 'book.epub'
-output_filename = 'wordlist.txt'
+input_filename = default_input_filename
+output_filename = default_output_filename
 shuffled = False
 
 argparser = argparse.ArgumentParser(
@@ -20,16 +17,12 @@ argparser = argparse.ArgumentParser(
 argparser.add_argument(
     '-f',  '--filename', help='The path to the EPUB or TXT file. Default to {}.'.format(input_filename))
 argparser.add_argument(
-    '-k', '--known-words', help='The folder which contain known word files. Words in these files are excluded from the word list. Default to {}.'.format(known_words_filename))
-argparser.add_argument(
     '-o', '--output', help='The output file. Default to {}.'.format(output_filename))
 argparser.add_argument('-s', '--shuffle', action="store_true",
                        help='Shuffle the word list.')
 args = argparser.parse_args()
 if args.filename:
     input_filename = args.filename
-if args.known_words:
-    known_words_filename = args.known_words
 if args.output:
     output_filename = args.output
 if args.shuffle:
@@ -38,26 +31,19 @@ if args.shuffle:
 # ------------------
 # Generate word list
 # ------------------
-mapping = get_mapping(lemma_filename)
-known_lemmas = get_known_lemmas(known_words_filename, mapping)
 
+text_extractor: TextExtractor
 if input_filename.endswith('.epub'):
-    used_words = get_words_from_epub(input_filename)
+    text_extractor = EpubTextExtractor()
 elif input_filename.endswith('.txt'):
-    used_words = get_words_from_txt(input_filename)
+    text_extractor = TxtTextExtractor()
 else:
     raise ValueError('Unknown file type.')
 
-wordlist = set()
-for word in used_words:
-    if word in mapping and mapping[word] not in known_lemmas:
-        wordlist.add(mapping[word])
-wordlist = list(wordlist)
-if shuffled:
-    shuffle(wordlist)
-else:
-    wordlist.sort()
+text = text_extractor.get_text(input_filename)
 
-with open(output_filename, 'w') as f:
-    for word in wordlist:
-        f.write(word + '\n')
+sentence_tokenizer = NltkSentTokenizer()
+sentences = sentence_tokenizer.get_sentences(text)
+
+list_generator = PlainListGenerator(shuffle=shuffled)
+list_generator.generate(sentences, output_filename)
