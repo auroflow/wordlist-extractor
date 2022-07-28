@@ -29,8 +29,6 @@ options:
   -h, --help            show this help message and exit
   -f FILENAME, --filename FILENAME
                         The path to the EPUB or TXT file. Default to book.epub.
-  -k KNOWN_WORDS, --known-words KNOWN_WORDS
-                        The folder containing known word files. Words in these files are excluded from the word list. Default to known-words.
   -o OUTPUT, --output OUTPUT
                         The output file. Default to wordlist.txt.
   -s, --shuffle         Shuffle the word list.
@@ -38,7 +36,7 @@ options:
 
 The existing files in the `known-words` directory are tailored to my need. You can modify, add to or delete them as you wish.
 
-Apart from the files mentioned above, `wordlist_extractor/data/lemma.en.txt` contains word forms that will be treated as one word. 
+Apart from the files mentioned above, `data/lemma.en.txt` contains word forms that will be treated as one word. 
 
 ### The wordlist divider script
 
@@ -59,6 +57,6 @@ It is recommended that you move `FILENAME.known.txt` to the `known-words` direct
 
 The Python scripts are released under the 2-Clause BSD License.
 
-The file `wordlist_extractor/data/lemma.en.txt` is released under the licenses mentioned in LICENSE.
+The file `data/lemma.en.txt` is released under the licenses mentioned in LICENSE.
 
 The example EPUB file `book.epub` contains *Alice's Adventures in Wonderland*, which is in the public domain.

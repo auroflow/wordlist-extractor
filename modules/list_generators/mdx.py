@@ -1,6 +1,7 @@
 import random
 import re
 from modules.lemmatizers.nltk import NltkLemmatizer
+from modules.lemmatizers.wordforms import WordFormsLemmatizer
 from modules.sentence_tokenizers.nltk import NltkSentTokenizer
 
 from modules.utils.utils import get_known_lemmas, get_mapping
@@ -13,7 +14,7 @@ class ExampleSentenceDictGenerator:
         mapping = get_mapping(lemma_filename)
         known_lemmas = get_known_lemmas(known_words_path)
 
-        lemmatizer = NltkLemmatizer()
+        lemmatizer = WordFormsLemmatizer()
 
         for sentence in sentences:
             lemma_words = lemmatizer.lemmatize(sentence)

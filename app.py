@@ -1,4 +1,5 @@
 import argparse
+from modules.list_generators.mdx import ExampleSentenceDictGenerator
 from modules.list_generators.wordlist import PlainListGenerator
 from modules.sentence_tokenizers.nltk import NltkSentTokenizer
 from modules.text_extractors import TextExtractor
@@ -47,3 +48,6 @@ sentences = sentence_tokenizer.get_sentences(text)
 
 list_generator = PlainListGenerator(shuffle=shuffled)
 list_generator.generate(sentences, output_filename)
+
+# mdx_generator = ExampleSentenceDictGenerator()
+# mdx_generator.generate(sentences, "dict.txt")

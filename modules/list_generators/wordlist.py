@@ -1,6 +1,7 @@
 import random
 import re
 from modules.lemmatizers.nltk import NltkLemmatizer
+from modules.lemmatizers.wordlist import WordListLemmatizer
 from modules.sentence_tokenizers.nltk import NltkSentTokenizer
 
 from modules.utils.utils import get_known_lemmas
